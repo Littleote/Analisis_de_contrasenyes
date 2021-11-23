@@ -3,3 +3,6 @@
 
 # Extra data files
 *clean_data.csv
+
+# Python
+*.pyc
