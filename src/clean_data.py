@@ -15,6 +15,12 @@ class DataCleaner:
                  '^', '~', ' ']
     CaractersValids = Minuscules + Majuscules + Xifres + Especials
     
+    TipusCaracters = dict()
+    TipusCaracters.update({c: "Minuscules" for c in Minuscules})
+    TipusCaracters.update({c: "Majuscules" for c in Majuscules})
+    TipusCaracters.update({c: "Xifres" for c in Xifres})
+    TipusCaracters.update({c: "Especials" for c in Especials})
+    
     def isValid(contrasenya):
         try:
             # Treure les contrasenyes amb caracters que no consideri valids
@@ -28,14 +34,23 @@ class DataCleaner:
             #   tot i que s'ha marcat la columna de passwords com strings
             return False
         
-    def cleanData(data, output):
+    def cleanData(data, clean_data):
         assert os.path.isfile(data)
         # Saltarse les files on les dades no estiguin ben formategades
         dataset = pd.read_csv(data, on_bad_lines='skip', encoding='utf-8')
         # Treure les dades que contenen caracters que no acceptem
         dataset = dataset[dataset.apply(lambda s: DataCleaner.isValid(s['password']), axis=1)]
         # Guardar el nou dataset a un fitxer apart
-        dataset.to_csv(output, index=False)
+        dataset.to_csv(clean_data, index=False)
+        
+    def loadData(data='../data/clean_data.csv'):
+        dataset = pd.read_csv(data, on_bad_lines='skip', encoding='utf-8')
+        return dataset
+    
+    def loadCleanData(data, clean_data ='../data/clean_data.csv', regenerate=True):
+        if regenerate or not os.path.isfile(clean_data):
+            DataCleaner.cleanData(data, clean_data)
+        return DataCleaner.loadData(clean_data)
 
 if __name__ == "__main__":
     DataCleaner.cleanData('../data/data.csv', '../data/clean_data.csv')
