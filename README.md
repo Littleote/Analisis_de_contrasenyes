@@ -16,7 +16,8 @@ Primer hem buscat atributs per descriure la seguretat a través de probabilitat,
 * Probabilitat de les parelles de caracters
 * Que tan barrejats es troben
 * Longitud de la cadena
-Resultats:
+
+Resultats:  
 ![Figura-Matriu de percentatges del model longitud](https://user-images.githubusercontent.com/57794658/148817614-03375566-ff00-43ed-8e03-a8f08c0f0969.png)
 
 #### set 1.b
@@ -24,13 +25,16 @@ Al veure que la longitud es suficient per trobar els resultats del dataset hem p
 * Probabilitat mitja dels caracters
 * Probabilitat mitja de les parelles de caracters
 * Que tan barrejats es troben
-Resultats:
+
+Resultats:  
 ![Figura-Matriu de confusio set 1 b](https://user-images.githubusercontent.com/57794658/148817550-63bbd4d2-56a2-42c1-a602-2b323cb94d70.png)
 
 #### set 2
 Longitud mitja de les cadenes dels tipus de caracters. Per exemple: abcdABC12 son una cadena de quatre, una de tres i una de dos.  
 * Longitud mitja
 * Longitud mitja ponderada
+
+Resultats:  
 ![Figura-Matriu de confusio set 2](https://user-images.githubusercontent.com/57794658/148817584-0d15b39d-1819-4aea-a395-294e093adc56.png)
 
 #### set 3
@@ -39,6 +43,8 @@ Importancia de tenir majuscules, minuscules, xifres i/o caracters especial.
 * Contè majuscules
 * Contè xifres
 * Contè caracters especials
+
+Resultats:  
 ![Figura-Matriu de confusio set 3](https://user-images.githubusercontent.com/57794658/148817660-172f51a7-a1f9-4ec5-aeca-dd1888fea299.png)
 
 ### Preprocessat
@@ -70,7 +76,7 @@ Per tal de fer una prova, es pot fer servir amb la següent comanda:
 ``` python3 demo.py ```  
 A continuació, després de que es generin els dos models, es poden entrar contrasenyes per veure els valors de seguretat que se li assignaria.
 
-Exemple de la demo
+Exemple de la demo  
 ![demo_example](https://user-images.githubusercontent.com/57794658/148819093-35148cf4-4762-44da-89f8-a060cfa6a1ca.png)
 
 ## Conclusions
